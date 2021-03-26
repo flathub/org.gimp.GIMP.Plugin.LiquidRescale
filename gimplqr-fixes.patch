@@ -1,0 +1,42 @@
+Only in gimp-lqr-plugin-0.7.2: gimplqr-fixes.patch
+diff -ur gimp-lqr-plugin-0.7.2-orig/src/interface_aux.c gimp-lqr-plugin-0.7.2/src/interface_aux.c
+--- gimp-lqr-plugin-0.7.2-orig/src/interface_aux.c	2021-03-25 23:47:09.278225137 -0400
++++ gimp-lqr-plugin-0.7.2/src/interface_aux.c	2021-03-25 23:57:50.909837192 -0400
+@@ -48,11 +48,11 @@
+ 
+ gint dialog_aux_response = GTK_RESPONSE_OK;
+ 
+-PlugInUIVals *ui_state;
+-PlugInVals *state;
+-PlugInDialogVals *dialog_state;
++extern PlugInUIVals *ui_state;
++extern PlugInVals *state;
++extern PlugInDialogVals *dialog_state;
+ 
+-GtkWidget *dlg;
++extern GtkWidget *dlg;
+ 
+ /***  Public functions  ***/
+ 
+diff -ur gimp-lqr-plugin-0.7.2-orig/src/interface_I.c gimp-lqr-plugin-0.7.2/src/interface_I.c
+--- gimp-lqr-plugin-0.7.2-orig/src/interface_I.c	2021-03-25 23:47:09.280225161 -0400
++++ gimp-lqr-plugin-0.7.2/src/interface_I.c	2021-03-25 23:58:28.241196377 -0400
+@@ -65,13 +65,13 @@
+ 
+ gint dialog_I_response = GTK_RESPONSE_OK;
+ 
+-PlugInUIVals *ui_state;
+-PlugInVals *state;
+-PlugInDialogVals *dialog_state;
+-gboolean features_are_sensitive;
++extern PlugInUIVals *ui_state;
++extern PlugInVals *state;
++extern PlugInDialogVals *dialog_state;
++extern gboolean features_are_sensitive;
+ InterfaceIData interface_I_data;
+ 
+-GtkWidget *dlg;
++extern GtkWidget *dlg;
+ GtkWidget *coordinates;
+ 
+ gulong size_changed = 0;
