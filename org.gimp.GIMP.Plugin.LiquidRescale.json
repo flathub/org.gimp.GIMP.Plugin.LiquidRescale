@@ -1,9 +1,9 @@
 {
     "id": "org.gimp.GIMP.Plugin.LiquidRescale",
-    "branch": "2-3.36",
+    "branch": "2-40",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "stable",
-    "sdk": "org.gnome.Sdk//3.36",
+    "sdk": "org.gnome.Sdk//40",
     "build-extension": true,
     "appstream-compose": false,
     "separate-locales": false,
@@ -64,6 +64,10 @@
                 {
                     "type": "patch",
                     "path": "gimp-lqr.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "gimplqr-fixes.patch"
                 },
                 {
                     "type": "file",
