@@ -42,6 +42,7 @@
         {
             "name": "liquidrescale",
             "build-options": {
+                "cflags": "-fcommon",
                 "env": {
                     "LDFLAGS": "-L/app/extensions/LiquidRescale/lib",
                     "GIMP_DATADIR": "${FLATPAK_DEST}",
@@ -49,6 +50,7 @@
                 }
             },
             "post-install": [
+                "strip ${FLATPAK_DEST}/plug-ins/*",
                 "install -Dm644 --target ${FLATPAK_DEST}/share/metainfo/ org.gimp.GIMP.Plugin.LiquidRescale.metainfo.xml",
                 "appstream-compose --basename=org.gimp.GIMP.Plugin.LiquidRescale --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.LiquidRescale",
                 "mkdir $FLATPAK_DEST/help",
@@ -64,10 +66,6 @@
                 {
                     "type": "patch",
                     "path": "gimp-lqr.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "gimplqr-fixes.patch"
                 },
                 {
                     "type": "file",
