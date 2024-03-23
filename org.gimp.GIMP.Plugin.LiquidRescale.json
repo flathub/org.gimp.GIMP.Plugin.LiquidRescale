@@ -3,9 +3,8 @@
     "branch": "2-40",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "stable",
-    "sdk": "org.gnome.Sdk//44",
+    "sdk": "org.gnome.Sdk//46",
     "build-extension": true,
-    "appstream-compose": false,
     "separate-locales": false,
     "build-options": {
         "prefix": "/app/extensions/LiquidRescale",
@@ -52,7 +51,6 @@
             "post-install": [
                 "strip ${FLATPAK_DEST}/plug-ins/*",
                 "install -Dm644 org.gimp.GIMP.Plugin.LiquidRescale.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
-                "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}",
                 "mkdir $FLATPAK_DEST/help",
                 "mv $FLATPAK_DEST/share/gimp-lqr-plugin/help $FLATPAK_DEST/help/gimp-lqr-plugin",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gimp-lqr-plugin COPYING"
